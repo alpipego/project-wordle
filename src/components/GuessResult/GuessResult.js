@@ -1,6 +1,6 @@
 import React from 'react';
 
-function WordGrid({guesses}) {
+function GuessResult({guesses}) {
     return (
         <div className="guess-results">
             {guesses.map(({word, id}) => (
@@ -10,4 +10,4 @@ function WordGrid({guesses}) {
     );
 }
 
-export default WordGrid;
+export default GuessResult;
