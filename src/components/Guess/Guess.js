@@ -1,12 +1,14 @@
 import React from 'react';
 import {range} from "../../utils";
+import {checkGuess} from "../../game-helpers";
 
-function Guess({word}) {
+function Guess({word, answer}) {
+    const checked = checkGuess(word, answer);
     return (
         <p className="guess">
             {range(0, 5).map(column => {
                 return (
-                    <span className="cell" key={`column-${column}`}>
+                    <span className={`cell ${checked !== null && checked[column].status}`} key={column}>
                         {word && word[column]}
                     </span>
                 );
